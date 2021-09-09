@@ -51,6 +51,7 @@ class ArticlesController extends AppController
     public function add()
     {
         $article = $this->Articles->newEntity();
+
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
@@ -60,7 +61,9 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
+
         $users = $this->Articles->Users->find('list', ['limit' => 200]);
+        
         $this->set(compact('article', 'users'));
     }
 
