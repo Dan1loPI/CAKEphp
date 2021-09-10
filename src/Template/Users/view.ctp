@@ -5,9 +5,8 @@
     <li>Nome: <?php echo $user->first_name; ?></li>
     <li>Sobrenome: <?php echo $user->last_name; ?></li>
     <li>email: <?php echo $user->email; ?></li>
-    <li>Senha: <?php echo $user->password; ?></li>
     <li>Criado em: <?php echo $user->created; ?></li>
-    <li>Atualizado em: <?php echo $user->updated; ?></li>
+    <li>Atualizado em: <?php echo $user->modified; ?></li>
    
 </ul>
 

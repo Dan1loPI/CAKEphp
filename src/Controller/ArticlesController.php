@@ -51,19 +51,16 @@ class ArticlesController extends AppController
     public function add()
     {
         $article = $this->Articles->newEntity();
-
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
-                $this->Flash->success(__('Artigo salvo com sucesso'));
+                $this->Flash->success(__('The article has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O artigo não pôde ser salvo. Por favor, tente novamente.'));
+            $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-
         $users = $this->Articles->Users->find('list', ['limit' => 200]);
-        
         $this->set(compact('article', 'users'));
     }
 
@@ -82,11 +79,11 @@ class ArticlesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
-                $this->Flash->success(__('Artigo alterado com sucesso'));
+                $this->Flash->success(__('The article has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O artigo não pôde ser alterado. Por favor, tente novamente.'));
+            $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
         $users = $this->Articles->Users->find('list', ['limit' => 200]);
         $this->set(compact('article', 'users'));
@@ -104,9 +101,9 @@ class ArticlesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $article = $this->Articles->get($id);
         if ($this->Articles->delete($article)) {
-            $this->Flash->success(__('Artigo excluido com sucesso.'));
+            $this->Flash->success(__('The article has been deleted.'));
         } else {
-            $this->Flash->error(__('O artigo não pode ser excluido! Por Favor tente novamente.'));
+            $this->Flash->error(__('The article could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
