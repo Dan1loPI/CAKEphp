@@ -10,4 +10,4 @@
    
 </ul>
 
-<a href="/users">Voltar</a>
+<a href="/admin/users">Voltar</a>

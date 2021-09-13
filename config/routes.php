@@ -102,3 +102,8 @@ Router::scope('/', function (RouteBuilder $routes) {
  * });
  * ```
  */
+Router::prefix('admin', function($routes){
+    $routes->connect('/',['controller' => 'Articles', 'action' => 'index']);
+
+    $routes->fallbacks('DashedRoute');
+});

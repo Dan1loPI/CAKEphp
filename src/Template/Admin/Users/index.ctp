@@ -18,8 +18,8 @@
             <td><?php echo $user->last_name; ?></td>
             <td><?php echo $user->email; ?></td>
             <td>
-                <a href="/users/view/<?php echo $user->id;?>">Visualizar</a>
-                <a href="/users/edit/<?php echo $user->id;?>">Editar</a>
+                <a href="/admin/users/view/<?php echo $user->id;?>">Visualizar</a>
+                <a href="/admin/users/edit/<?php echo $user->id;?>">Editar</a>
              <?= $this->Form->postLink(__('Excluir'), ['action' => 'delete', $user->id], ['confirm' => __('Realmente você quer apagar o usuário {0} ?', $user->name)]) ?> 
             </td>
         </tr>

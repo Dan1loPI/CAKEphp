@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $article->has('user') ? $this->Html->link($article->user->id, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
+            <td><?= $article->has('user') ? $this->Html->link($article->user->first_name, ['controller' => 'Users', 'action' => 'view', $article->user->first_name]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

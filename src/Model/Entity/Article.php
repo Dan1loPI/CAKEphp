@@ -2,7 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
-use Cake\Utility\Infector;
+use Cake\Utility\Inflector;
 
 class Article extends Entity
 {
